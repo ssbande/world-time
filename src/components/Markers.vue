@@ -6,6 +6,8 @@
           v-html="item.text"
           :key="item.text"
           :class="{[item.styleName]: true, move: mapDone}"
+          :ref="item.refCode"
+          @click='imageClicked(item.code, item.displayName, $event)'
         />
       </transition>
     </div>
@@ -14,54 +16,52 @@
 
 <script>
 import '@/assets/css/markers.scss';
-import AusFlag from '@/assets/flags/au.svg';
-import InFlag from '@/assets/flags/in.svg';
-import UkFlag from '@/assets/flags/uk.svg';
-import UsFlag from '@/assets/flags/us.svg';
+import constants from '../constants';
 
 export default {
   name: 'Markers',
   props: {
     mapDone: { type: Boolean },
+    setCountry: { type: Function },
+    setCode: { type: Function },
+    setFlag: { type: Function },
+  },
+  created() {
+    window.addEventListener("resize", this.handleResize);
+  },
+  destroyed() {
+    window.removeEventListener("resize", this.handleResize);
   },
   data() {
     return {
       selectedCountry: '',
       selectedFlag: null,
-      markerPositions: [
-        {
-          id: 1,
-          code: 'UK',
-          tzDiff: '0.0',
-          text: '&#9671;',
-          styleName: 'marker__uk',
-          flagSrc: UkFlag,
-        },
-        {
-          id: 2,
-          code: 'US',
-          tzDiff: '-5.0',
-          text: '&#9671;',
-          styleName: 'marker__us',
-          flagSrc: UsFlag,
-        },
-        {
-          id: 3,
-          code: 'IN',
-          tzDiff: '5.5',
-          text: '&#9671;',
-          styleName: 'marker__in',
-          flagSrc: InFlag,
-        },
-        {
-          id: 4,
-          code: 'AU',
-          tzDiff: '9.5',
-          text: '&#9671;',
-          styleName: 'marker__au',
-          flagSrc: AusFlag,
-        },
-      ],
+      markerPositions: constants.markersData,
+    }
+  },
+  methods: {
+    imageClicked(code, name, event) {
+      event.preventDefault();
+      this.setCountry(name);
+      this.setCode(code);
+      this.markerPositions.forEach((marker) => {
+        const selectedMarker = marker;
+        if (marker.code === code) {
+          selectedMarker.text = '&#9672;';
+          this.setFlag(marker.flagSrc);
+        } else selectedMarker.text = '&#9671;';
+      });
+    },
+    handleResize() {
+      console.log("window size: ", window.innerWidth);
+      console.log("us ref: ", this.$refs.US_ref);
+      console.log("us ref top: ", this.$refs.US_ref[0].getBoundingClientRect().top);
+      console.log("us ref left: ", this.$refs.US_ref[0].getBoundingClientRect().left);
+      // const usTop = this.$refs.US_ref[0].getBoundingClientRect().top;
+      // const usLeft = this.$refs.US_ref[0].getBoundingClientRect().left;
+
+
+      // console.log('image component: ', this.$refs.worldMapImg.width)
     }
   }
 }

@@ -6,6 +6,40 @@
   top: 75%;
 }
 
+
+.clockData {
+  position: absolute;
+  left: calc(9.75% + 125px);
+  top: calc(75% + 62px);
+  min-width: 300px;
+  text-align: left;
+  padding-left: 15px;
+  color: white;
+
+  .locationName {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: UnitedSansItalic;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  
+    img {
+      width: 20px;
+    }
+  
+    div {
+      padding-left: 4px;
+      text-transform: uppercase;
+    }
+  }
+
+  .locationTime {
+    margin-top: 4px;
+    font-size: 2rem;
+  }
+}
+
 @media (max-width: 800px) {
   .clockImage {
     width: 100px;
