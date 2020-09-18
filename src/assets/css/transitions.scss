@@ -1,0 +1,9 @@
+@import "variables";
+
+.fade-enter-to,
+.fade-leave-active {
+  transition: opacity $animDuration;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}

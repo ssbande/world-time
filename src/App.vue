@@ -1,37 +1,20 @@
 <template>
   <div id="app">
-    Initial Commit.
+    <WorldContainer />
   </div>
 </template>
 
 <script>
+import '@/assets/css/app.scss';
+import '@/assets/css/world.scss';
+import '@/assets/css/animations.scss';
+import '@/assets/css/transitions.scss';
+import WorldContainer from './components/WorldMap.vue';
 
 export default {
   name: 'App',
+  components: {
+    WorldContainer,
+  },
 }
 </script>
-
-<style lang="scss">
-@font-face {
-  font-family: "UnitedSans";
-  src: local("UnitedSans"),
-   url(./assets/fonts/UnitedSansCdBd.woff2) format("truetype");
-}
-
-@font-face {
-  font-family: "UnitedSansItalic";
-  src: local("UnitedSansItalic"),
-   url(./assets/fonts/UnitedItalicSmCdMd.woff2) format("truetype");
-}
-
-body {
-  background: #e60000;
-}
-#app {
-  font-family: UnitedSans, Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: white;
-}
-</style>

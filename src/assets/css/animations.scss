@@ -1,0 +1,29 @@
+@import "variables";
+
+.fadingEffect {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 0%;
+  background: $red;
+  -moz-animation: showHide 2s ease-in alternate;
+  animation: showHide 2s ease-in alternate;
+}
+
+@-webkit-keyframes showHide {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+@keyframes showHide {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}

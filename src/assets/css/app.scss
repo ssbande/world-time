@@ -1,0 +1,25 @@
+@import "variables";
+
+@font-face {
+  font-family: "UnitedSans";
+  src: local("UnitedSans"),
+   url(../fonts/UnitedSansCdBd.woff2) format("truetype");
+}
+
+@font-face {
+  font-family: "UnitedSansItalic";
+  src: local("UnitedSansItalic"),
+   url(../fonts/UnitedItalicSmCdMd.woff2) format("truetype");
+}
+
+body {
+  background: $red;
+}
+
+#app {
+  font-family: UnitedSans, Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: white;
+}
