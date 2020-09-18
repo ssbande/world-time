@@ -3,6 +3,7 @@
     <WorldMap :onFinish="mapFadeComplete"/>
     <SideNavs :mapDone="mapDone" :onSideNavEntryFinish="sideNavComplete" />
     <CountryClock :sideNavDone="sidenavDone" />
+    <Markers :mapDone="mapDone" />
   </div>
 </template>
 
@@ -11,13 +12,15 @@
 import WorldMap from './WorldMap';
 import SideNavs from './SideNavs';
 import CountryClock from './CountryClock';
+import Markers from './Markers';
 
 export default {
   name: 'WorldContainer',
   components: {
     WorldMap,
     SideNavs,
-    CountryClock
+    CountryClock,
+    Markers,
   },
   data() {
     return {

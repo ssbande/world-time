@@ -1,0 +1,43 @@
+.marker {
+  color: white;
+  font-size: 21px;
+  cursor: pointer;
+
+  div {
+    opacity: 0;
+    margin-top: -10px;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    position: absolute;
+  }
+
+  .move {
+    margin-top: 0px;
+    opacity: 1;
+  }
+
+  &__uk {
+    left: 598px;
+    top: 215px;
+    transition-delay: 0.2s;
+  }
+
+  &__us {
+    left: 424px;
+    top: 285px;
+    transition-delay: 0.1s;
+  }
+
+  &__in {
+    left: 912px;
+    top: 373px;
+    transition-delay: 0.3s;
+  }
+
+  &__au {
+    left: 1016px;
+    top: 512px;
+    transition-delay: 0.4s;
+  }
+}
