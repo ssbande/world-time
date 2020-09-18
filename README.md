@@ -8,5 +8,6 @@ npm start
 ```
 
 #### ToDos 
-* Non-responsive location markers
-* Clock Animation pending
+* Location markers to be responsive as per world map
+* Clock Animation for selected country
+* Keyboard navigation for location markers
