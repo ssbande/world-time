@@ -1,0 +1,18 @@
+.clockImage {
+  width: 125px;
+  height: auto;
+  position: absolute;
+  left: 9.75%;
+  top: 75%;
+}
+
+@media (max-width: 800px) {
+  .clockImage {
+    width: 100px;
+  }
+}
+@media (max-width: 600px) {
+  .clockImage {
+    width: 75px;
+  }
+}
