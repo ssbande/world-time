@@ -1,0 +1,23 @@
+.sidenav-left {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.3;
+  transition: 0.5s;
+}
+
+.sidenav-right {
+  height: 100%;
+  width: 37%;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.3;
+  transition: 0.5s;
+}

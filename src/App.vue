@@ -6,10 +6,9 @@
 
 <script>
 import '@/assets/css/app.scss';
-import '@/assets/css/world.scss';
 import '@/assets/css/animations.scss';
 import '@/assets/css/transitions.scss';
-import WorldContainer from './components/WorldMap.vue';
+import WorldContainer from './components/WorldContainer.vue';
 
 export default {
   name: 'App',

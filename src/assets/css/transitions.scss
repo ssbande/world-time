@@ -1,5 +1,6 @@
 @import "variables";
 
+/* WORLD MAP  transitions =========================================================  */
 .fade-enter-to,
 .fade-leave-active {
   transition: opacity $animDuration;
@@ -7,3 +8,20 @@
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
+/* WORLD MAP  transitions end =========================================================  */
+
+/* SIDENAV  transitions =========================================================  */
+.slide-left-enter-active {
+  transition: all 2s ease;
+}
+.slide-left-enter {
+  transform: translateX(-115%);
+}
+
+.slide-right-enter-active {
+  transition: all 1s ease;
+}
+.slide-right-enter {
+  transform: translateX(115%);
+}
+/* SIDENAV  transitions end =========================================================  */
